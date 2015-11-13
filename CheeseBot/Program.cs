@@ -9,7 +9,9 @@ namespace CheeseBot
 {
     class Program
     {
-        
+
+        private static IrcClient irc = new IrcClient("irc.twitch.tv", 6667, "USERNAME", "PASSWORD");
+
         static void Main(string[] args)
         {
             Thread connectReadChat = new Thread(new ThreadStart(ConnectReadChat));
@@ -32,7 +34,6 @@ namespace CheeseBot
         private static void ConnectReadChat()
         {
 
-            IrcClient irc = new IrcClient("irc.twitch.tv", 6667, "USERNAME", "PASSWORD");
             irc.joinRoom("cheesekake");
             Console.WriteLine("Connected and entered room...");
             irc.sendChatMessage("I am connected and ready to go...");
@@ -58,6 +59,14 @@ namespace CheeseBot
 
         private static void RollChannelAdverts()
         {
+
+            while (true)
+            {
+                Thread.Sleep(240000);
+                irc.sendChatMessage("Testing");
+                Console.WriteLine("This is a test");
+
+            }
             
         }
     }
