@@ -20,14 +20,21 @@ namespace CheeseBot
             connectReadChat.Start();
             rollChannelAdverts.Start();
 
-            Console.WriteLine("To stop program and kill task, type 'quit'");
-            string keyPressed = Console.ReadLine();
-            if(keyPressed.ToLower() == "quit")
+            Console.WriteLine("To stop program and kill task, type 'quitprog'");
+            while (true)
             {
-                Console.WriteLine("Terminating all threads...");
-                connectReadChat.Abort();
-                rollChannelAdverts.Abort();
-            }           
+                string keyPressed = Console.ReadLine();
+                if (keyPressed.ToLower() == "quitprog")
+                {
+                    Console.WriteLine("Terminating all threads...");
+                    connectReadChat.Abort();
+                    rollChannelAdverts.Abort();
+                    break;
+                }
+                irc.sendChatMessage(keyPressed);
+                
+            }             
+    
 
         }
 
@@ -62,9 +69,11 @@ namespace CheeseBot
 
             while (true)
             {
+                int repNumber = 1;
                 Thread.Sleep(240000);
-                irc.sendChatMessage("Testing");
-                Console.WriteLine("This is a test");
+                irc.sendChatMessage("Testing #: " + repNumber);
+                Console.WriteLine("This is a test number" + repNumber);
+                repNumber++;
 
             }
             

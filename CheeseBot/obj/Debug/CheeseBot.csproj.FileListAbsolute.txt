@@ -1,6 +1,6 @@
-c:\users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\bin\Debug\CheeseBot.exe.config
-c:\users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\bin\Debug\CheeseBot.exe
-c:\users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\bin\Debug\CheeseBot.pdb
-c:\users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\obj\Debug\CheeseBot.csprojResolveAssemblyReference.cache
-c:\users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\obj\Debug\CheeseBot.exe
-c:\users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\obj\Debug\CheeseBot.pdb
+C:\Users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\bin\Debug\CheeseBot.exe
+C:\Users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\bin\Debug\CheeseBot.exe.config
+C:\Users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\obj\Debug\CheeseBot.exe
+C:\Users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\obj\Debug\CheeseBot.pdb
+C:\Users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\obj\Debug\CheeseBot.csprojResolveAssemblyReference.cache
+C:\Users\karlb2\documents\visual studio 2015\Projects\CheeseBot\CheeseBot\bin\Debug\CheeseBot.pdb
