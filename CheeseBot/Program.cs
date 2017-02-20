@@ -10,40 +10,48 @@ namespace CheeseBot
     class Program
     {
 
-        private static IrcClient irc = new IrcClient("irc.twitch.tv", 6667, "USERNAME", "PASSWORD");
+        private static IrcClient irc = new IrcClient("irc.twitch.tv", 6667, "cheesekakebot", "oauth:bvjru8q8ke2kyn67cuy4fo7vmlyv70");
 
         static void Main(string[] args)
         {
+            // Initialize new threads to run core components of Twitch Bot
             Thread connectReadChat = new Thread(new ThreadStart(ConnectReadChat));
             Thread rollChannelAdverts = new Thread(new ThreadStart(RollChannelAdverts));
 
+            // Start core threads
             connectReadChat.Start();
-            rollChannelAdverts.Start();
+            // rollChannelAdverts.Start(); ENABLE LATER
 
+            // Code below will close program and end loop once user types predetermined "Code word"
             Console.WriteLine("To stop program and kill task, type 'quitprog'");
             while (true)
             {
                 string keyPressed = Console.ReadLine();
                 if (keyPressed.ToLower() == "quitprog")
                 {
+                    // Terminate threads on program quit
                     Console.WriteLine("Terminating all threads...");
                     connectReadChat.Abort();
                     rollChannelAdverts.Abort();
                     break;
                 }
+
+                // Send console commands to Twitch chat
                 irc.sendChatMessage(keyPressed);
                 
             }             
     
-
         }
 
         private static void ConnectReadChat()
         {
+            irc.joinRoom("vkill");
+            Console.WriteLine("Connected and entered the room...");
 
-            irc.joinRoom("cheesekake");
-            Console.WriteLine("Connected and entered room...");
+            // Initial chat message indicating that the bot is connected and in the Twitch Channel. Printed to Twitch Chat
             irc.sendChatMessage("I am connected and ready to go...");
+
+            // While connected
             while (true)
             {
                 string message = irc.readMessage();
@@ -66,14 +74,15 @@ namespace CheeseBot
 
         private static void RollChannelAdverts()
         {
+            int repNumber = 1;
 
+            // Can advertise within chat every time sleep time has passed. This can be useful for advertising or rules
             while (true)
             {
-                int repNumber = 1;
-                Thread.Sleep(240000);
+                Thread.Sleep(400000);
                 irc.sendChatMessage("Testing #: " + repNumber);
-                Console.WriteLine("This is a test number" + repNumber);
-                repNumber++;
+                Console.WriteLine("This is test number" + repNumber);
+                repNumber = repNumber + 1;
 
             }
             
