@@ -10,7 +10,7 @@ namespace CheeseBot
     class Program
     {
 
-        private static IrcClient irc = new IrcClient("irc.twitch.tv", 6667, "cheesekakebot", "oauth:bvjru8q8ke2kyn67cuy4fo7vmlyv70");
+        private static IrcClient irc = new IrcClient("irc.twitch.tv", 6667, "cheesekakebot", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
         static void Main(string[] args)
         {
